@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px  25px;
+    background-color: orange;
+    
+    .header-logo{
+        font-weight: bolder;
+    }
+
+    .header-search-input{
+        padding: 5px 25px;
+        border-radius: 10px;
+    }
+
+    .header-buttons{
+        display: flex;
+        gap: 15px;
+        #cart{
+            cursor: pointer;
+            border: none;
+            background-color: black;
+            padding: 5px 20px;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        #register{
+            @extend #cart;
+            background-color: blue;
+        
+    }
+
+    #login{
+        @extend #cart;
+        background-color: red;}
+    }
+}
+
+// main area
+// categories
+main{
+    padding: 20px;
+    h1{
+        text-align: center;
+    }
+}
+
+.categories{
+    display: flex;
+    margin-top: 20px;
+    gap: 20px;
+    justify-content: center;
+
+    .category-card{
+        max-width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        transition: all .3s;
+        cursor: pointer;
+        &:hover{
+            transform: scale(1.05);
+        }
+    
+
+        img{
+            width: 100%;
+            border-radius: 10px;
+            
+        }
+
+        p{
+            position: absolute;
+            bottom: 10px;
+            font-size: 18px;
+            background-color: white;
+            padding: 10px 50px;
+            border-radius: 10px;
+            font-weight: 800;
+            box-shadow: 2px 2px 10px black;
+            transition: all .3s;
+            &:hover{
+                background-color: green;
+                color: white;
+            }
+        }
+    }
+}
+
+// products
+
+#product-sec{
+    margin-bottom: 50px;
+
+    h1{
+        margin: 40px 0px;
+        text-align: center;
+    }
+    .products{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;       
+        row-gap: 40px;
+        .product{
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            max-width: 300px;
+            box-shadow: 0px 0px 10px gray;
+            border-radius: 10px;
+            transition: all .3s;
+            cursor: pointer;
+            &:hover{
+                transform: translate(10px, -10px);
+            }
+            img{
+                width: 100%;
+                border-radius: 20px;
+            }
+            p{
+                font-weight: 600;
+                font-size: 16px;
+            }
+            .product-bottom{
+                border: 2px solid black;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                background-color: black;
+                color: white;
+                padding: 5px 10px;
+                border-radius: 10px;
+                align-items: center;
+                button{
+                    padding: 10px;
+                    background-color: yellow;
+                    color: black;
+                    border: none;
+                    border-radius: 20px;
+                    transition: all .3s ;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: orange;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+// users
+.users{
+display: flex;
+gap: 20px;
+
+padding: 50px;
+justify-content: center;
+gap: 50px;
+.user{
+    max-width: 250px;
+    text-align: center;
+    transition: all .3s;
+    cursor: pointer;
+    &:hover{
+        transform: scale(1.05);
+
+    }
+    
+    img{
+        width: 100%;
+        border-radius: 10px;
+    }
+    p{
+        background-color:darkblue;
+        color: white;
+        font-size: 18px;
+        border-radius: 10px;
+        transition: all .3s;
+        &:hover{
+            background-color: red;
+        }
+    }
+}
+}
