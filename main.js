@@ -100,7 +100,7 @@ function fetchUsers(){
     fetch(`${baseUrl}/users`)
      // cevap olumlu olursa çalışır
      .then((response)=> response.json())
-     .then((data)=> renderUsers(data.slice(1,5)))
+     .then((data)=> renderUsers(data.slice(1,4)))
      .catch((error)=>console.log(error));
 }
 
