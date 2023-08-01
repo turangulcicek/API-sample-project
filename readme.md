@@ -23,4 +23,4 @@
 --categories uç noktasına istek at ve cevabı al
 --gelen cevaptaki her bir kategori için ekrana bir kategori kartı bas# API-sample-project  -->
 
-![](msedge_OA6cinS6gs.gif)# e-commerce
+![](msedge_uvoBjltzrI.gif)# e-commerce
