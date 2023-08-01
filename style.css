@@ -1,175 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 20px 25px;
-  background-color: orange;
-}
-.header .header-logo {
-  font-weight: bolder;
-}
-.header .header-search-input {
-  padding: 5px 25px;
-  border-radius: 10px;
-}
-.header .header-buttons {
-  display: flex;
-  gap: 15px;
-}
-.header .header-buttons #cart, .header .header-buttons #login, .header .header-buttons #register {
-  cursor: pointer;
-  border: none;
-  background-color: black;
-  padding: 5px 20px;
-  color: white;
-  font-size: 16px;
-  border-radius: 5px;
-}
-.header .header-buttons #register {
-  background-color: blue;
-}
-.header .header-buttons #login {
-  background-color: red;
+body {
+  font-family: "poppins";
 }
 
-main {
-  padding: 20px;
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  /* grabient.com */
+  background-image: linear-gradient(44deg, #df3970 0%, #4ad2cd 100%);
 }
-main h1 {
-  text-align: center;
+header h1 {
+  text-shadow: 0 0 30px #b5fffc;
+}
+header input {
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+header div {
+  display: flex;
+  gap: 20px;
+}
+header div button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+}
+header div button:nth-child(1) {
+  background: black;
+}
+header div button:nth-child(2) {
+  background: blue;
+}
+header div button:nth-child(3) {
+  background: red;
+}
+
+/* Kategoriler */
+
+section {
+  padding: 50px;
 }
 
 .categories {
   display: flex;
-  margin-top: 20px;
-  gap: 20px;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 40px;
 }
-.categories .category-card {
+
+.category-card {
   max-width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  transition: all 0.3s;
-  cursor: pointer;
+  box-shadow: 0 0 30px rgba(20, 20, 20, 0.231);
 }
-.categories .category-card:hover {
-  transform: scale(1.05);
-}
-.categories .category-card img {
+
+.category-card img {
   width: 100%;
   border-radius: 10px;
 }
-.categories .category-card p {
+
+.category-card p {
   position: absolute;
   bottom: 10px;
-  font-size: 18px;
-  background-color: white;
-  padding: 10px 50px;
+  background: white;
+  width: 70%;
+  text-align: center;
+  padding: 10px;
   border-radius: 10px;
-  font-weight: 800;
+  font-weight: 600;
   box-shadow: 2px 2px 10px black;
-  transition: all 0.3s;
-}
-.categories .category-card p:hover {
-  background-color: green;
-  color: white;
 }
 
-#product-sec {
-  margin-bottom: 50px;
+/* Ürünler Kısmı */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 120px;
+  margin-top: 40px;
 }
-#product-sec h1 {
-  margin: 40px 0px;
-  text-align: center;
+
+@media (max-width: 1100px) {
+  .products {
+    justify-content: center;
+    gap: 40px;
+  }
 }
-#product-sec .products {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
-  row-gap: 40px;
-}
-#product-sec .products .product {
+
+.card {
+  max-width: 250px;
   padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  max-width: 300px;
-  box-shadow: 0px 0px 10px gray;
   border-radius: 10px;
-  transition: all 0.3s;
-  cursor: pointer;
+  /* https://getcssscan.com/css-box-shadow-examples */
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
-#product-sec .products .product:hover {
-  transform: translate(10px, -10px);
-}
-#product-sec .products .product img {
+
+.card img {
   width: 100%;
-  border-radius: 20px;
+  border-radius: 10px;
 }
-#product-sec .products .product p {
-  font-weight: 600;
-  font-size: 16px;
-}
-#product-sec .products .product .product-bottom {
-  border: 2px solid black;
+
+.card .action {
   width: 100%;
+  padding: 7px;
   display: flex;
   justify-content: space-between;
-  background-color: black;
   color: white;
-  padding: 5px 10px;
+  background: black;
   border-radius: 10px;
   align-items: center;
 }
-#product-sec .products .product .product-bottom button {
-  padding: 10px;
-  background-color: yellow;
-  color: black;
-  border: none;
-  border-radius: 20px;
-  transition: all 0.3s;
-  cursor: pointer;
-}
-#product-sec .products .product .product-bottom button:hover {
-  background-color: orange;
+.card .action span {
+  color: greenyellow;
 }
 
-.users {
+.card .action button {
+  background-image: linear-gradient(180deg, #0b57db 0%, #010001 100%);
+  border-radius: 10px;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  font-family: "poppins";
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.521);
+  cursor: pointer;
+  transition: scale 300ms;
+}
+
+.card .action button:hover {
+  scale: 0.96;
+}
+
+/* Sepet */
+
+.modal-wrapper {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(128, 128, 128, 0.4);
+  display: none;
+  place-items: center;
+}
+
+.active {
+  display: grid;
+}
+
+.modal {
+  background: white;
+  width: 70%;
+  height: 60%;
+  border-radius: 10px;
+  padding: 30px;
   display: flex;
-  gap: 20px;
-  padding: 50px;
-  justify-content: center;
+  flex-direction: column;
   gap: 50px;
 }
-.users .user {
-  max-width: 250px;
-  text-align: center;
-  transition: all 0.3s;
+
+.modal #icon {
+  display: flex;
+  justify-content: end;
+}
+
+.modal #icon img {
+  width: 40px;
   cursor: pointer;
+  transition: all 0.4s;
 }
-.users .user:hover {
-  transform: scale(1.05);
+.modal #icon img:hover {
+  scale: 0.87;
 }
-.users .user img {
-  width: 100%;
-  border-radius: 10px;
+.modal #list {
+  display: flex;
+  flex-direction: column;
+  /* bütün alanı kaplamasını sağlar */
+  flex-grow: 1;
+  /* elemanlar sınırın dışına çıkarsa scroll ekle */
+  overflow: auto;
+  gap: 30px;
+  padding: 14px;
 }
-.users .user p {
-  background-color: darkblue;
-  color: white;
-  font-size: 18px;
-  border-radius: 10px;
-  transition: all 0.3s;
+.modal #list .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
-.users .user p:hover {
-  background-color: red;
-}/*# sourceMappingURL=style.css.map */
+.modal #list .item img {
+  width: 60px;
+  border-radius: 7px;
+}
+.item .title {
+}
+.item .price {
+  color: green;
+}
+.modal #list .item p {
+}
+.modal #list .item #delete {
+  width: 30px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.modal #delete:hover {
+  transform: rotate(15deg);
+}
+
+.modal #total {
+  text-align: center;
+}
+.modal #total span {
+  color: rgb(0, 203, 0);
+  font-weight: bold;
+}
