@@ -1,22 +1,22 @@
 // Html'den gelenler
-const categoryList = document.querySelector('.categories');
-const productsArea = document.querySelector('.products');
-const basketBtn = document.querySelector('#basket');
-const closeBtn = document.querySelector('#close');
-const modal = document.querySelector('.modal-wrapper');
-const basketList = document.querySelector('#list');
-const totalSpan = document.querySelector('#total-price');
-const totalCount = document.querySelector('#count');
+const categoryList = document.querySelector(".categories");
+const productsArea = document.querySelector(".products");
+const basketBtn = document.querySelector("#basket");
+const closeBtn = document.querySelector("#close");
+const modal = document.querySelector(".modal-wrapper");
+const basketList = document.querySelector("#list");
+const totalSpan = document.querySelector("#total-price");
+const totalCount = document.querySelector("#count");
 
 //! API İşlemleri
 // html'in yüklenme anı
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   fetchCategories();
   fetchProducts();
 });
 
 // yaptığımız ,isteklerin tamamında buulunur:
-const baseUrl = 'https://api.escuelajs.co/api/v1';
+const baseUrl = "https://api.escuelajs.co/api/v1";
 
 /*
  * kategori bilgilerini alma
@@ -42,10 +42,10 @@ function renderCategories(categories) {
   // kategoriler dizisindeki herbir obje için çalışır
   categories.forEach((category) => {
     // 1- div oluşturma
-    const categoryDiv = document.createElement('div');
+    const categoryDiv = document.createElement("div");
 
     // 2- dive class ekleme
-    categoryDiv.classList.add('category-card');
+    categoryDiv.classList.add("category-card");
     // 3- divin içeriğini belirleme
     categoryDiv.innerHTML = `
     <img src=${category.image} />
@@ -78,22 +78,20 @@ function renderProducts(products) {
           <div class="card">
             <img src=${product.images[0]} />
             <h4>${product.title}</h4>
-            <h4>${
-              product.category.name ? product.category.name : 'Diğer'
-            }</h4>
+            <h4>${product.category.name ? product.category.name : "Diğer"}</h4>
             <div class="action">
               <span>${product.price} &#8378;</span>
               <button onclick="addToBasket({id:${product.id},title:'${
         product.title
       }',price:${product.price},img:'${
         product.images[0]
-      }',amount:1})">Sepete Ekle</button>
+      }',amount:1})">Add to Cart</button>
             </div>
           </div>
    `
     )
     // dizi şeklindeki veriyi virgülleri kaldırrak stringe dömnüştürür
-    .join(' ');
+    .join(" ");
 
   // ürünler html'ini listeye gönder
   productsArea.innerHTML += productsHTML;
@@ -104,16 +102,16 @@ let basket = [];
 let total = 0;
 
 //! Modal İşlemleri
-basketBtn.addEventListener('click', () => {
+basketBtn.addEventListener("click", () => {
   // sepeti açma
-  modal.classList.add('active');
+  modal.classList.add("active");
   // septe ürünleri listeleme
   renderBasket();
 });
 
-closeBtn.addEventListener('click', () => {
+closeBtn.addEventListener("click", () => {
   // sepeti kapatma
-  modal.classList.remove('active');
+  modal.classList.remove("active");
 });
 
 //! Sepet İşlemleri
@@ -147,7 +145,7 @@ function renderBasket() {
       </div>
   `
     )
-    .join(' ');
+    .join(" ");
 
   // hazıldaığımız kartları HTML'e gönderme
   basketList.innerHTML = cardsHTML;
@@ -165,7 +163,7 @@ function calculateTotal() {
   const amount = basket.reduce((sum, i) => sum + i.amount, 0);
 
   // miktarı html'e gönderme
-  totalCount.innerText = amount + ' ' + 'Item';
+  totalCount.innerText = amount + " " + "Item";
 
   // toplam değeri html'e gönderme
   totalSpan.innerText = sum;
