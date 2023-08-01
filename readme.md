@@ -1,4 +1,5 @@
- ## E-Commerce
+## E-Commerce
+
 -e-commmerce website usign API
 
 ## Technologies
@@ -9,8 +10,10 @@
 -API
 
 ## Sources
+
 -Api: https://fakeapi.platzi.com/
 `Screen`
+
 <!-- # YAPILACAKLAR
 -Statik bir header oluştur
 
@@ -19,4 +22,5 @@
 --sayfa yüklendiği anda istek at
 --categories uç noktasına istek at ve cevabı al
 --gelen cevaptaki her bir kategori için ekrana bir kategori kartı bas# API-sample-project  -->
-![](msedge_jXh0kcl6Ce.gif)# e-commerce
+
+![](msedge_OA6cinS6gs.gif)# e-commerce

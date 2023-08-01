@@ -165,7 +165,7 @@ function calculateTotal() {
   const amount = basket.reduce((sum, i) => sum + i.amount, 0);
 
   // miktarı html'e gönderme
-  totalCount.innerText = amount + ' ' + 'Ürün';
+  totalCount.innerText = amount + ' ' + 'Item';
 
   // toplam değeri html'e gönderme
   totalSpan.innerText = sum;
